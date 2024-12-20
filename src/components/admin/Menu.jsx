@@ -21,7 +21,7 @@ function Menu() {
             <Nav.Link as={Link} to = "/articles">Article</Nav.Link>
             
             <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Traitemen</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Traitement</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
               </NavDropdown.Item>

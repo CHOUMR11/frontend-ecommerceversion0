@@ -5,34 +5,39 @@ import Insertscategorie from './components/admin/scategories/Insertscategorie';
 import Listscategorie from './components/admin/scategories/Listscategorie';
 import Editcategorie from './components/admin/categories/Editcategorie';
 import Insertcategorie from './components/admin/categories/Insertcategorie';
-import Listarticle from './components/admin/articles/Listarticle'; // Correction
+import Listcategorie from './components/admin/categories/Listcategorie'; // Corrected route
+import Listarticle from './components/admin/articles/Listarticle'; 
 import Insertarticle from './components/admin/articles/Insertarticle';
 import Editarticle from './components/admin/articles/Editarticle';
 import Menu from './components/admin/Menu';
 import Home from './components/admin/Home';
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const App = () => {
   return (
     <Router>
       <Menu />
       <Routes>
-        {/* Routes pour les articles */}
+        {/* Routes for articles */}
         <Route path="/articles" element={<Listarticle />} />
         <Route path="/articles/add" element={<Insertarticle />} />
         <Route path="/articles/edit/:id" element={<Editarticle />} />
 
-        {/* Route pour la page d'accueil */}
+        {/* Route for the homepage */}
         <Route path="/" element={<Home />} />
 
-        {/* Routes pour les catégories */}
-        <Route path="/categories" element={<Listarticle />} />
+        {/* Routes for categories */}
+        <Route path="/categories" element={<Listcategorie />} /> {/* Corrected route */}
         <Route path="/categories/add" element={<Insertcategorie />} />
         <Route path="/categories/edit/:id" element={<Editcategorie />} />
 
-        {/* Routes pour les sous-catégories */}
+        {/* Routes for subcategories */}
         <Route path="/scategories" element={<Listscategorie />} />
         <Route path="/scategories/add" element={<Insertscategorie />} />
         <Route path="/scategories/edit/:id" element={<Editscategorie />} />
+
+        {/* Wildcard route for handling invalid paths */}
+        <Route path="*" element={<div>Page not found</div>} />
       </Routes>
     </Router>
   );
